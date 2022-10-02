@@ -1,2 +1,1 @@
-# testjce
-test jce files
+test jce project
