@@ -9,9 +9,28 @@ module base
     const short ERPC_VERSION   = 0x01;
     const int   TUP_VERSION    = 0x03;
 
-    struct request
+    struct Message
     {
+        0 optional string strTitle;
+        1 optional string strBody;
+        2 optional string strPayload;
+        3 optional string strChannelId;
+        4 optional int iBadge;
+        5 optional string strImage;
+        6 optional int iNotifyId;
+    };
 
-        1  require byte   b; 
+    struct AndroidReq
+    {
+        0 optional int iAppid;
+        1 optional string strMessageId;
+        2 optional string strToken;
+        3 optional Message stMessage;
+    };
+    struct AndroidRsp
+    {
+        0 optional int iResult;
+        1 optional int iFactoryRspCode;
+        2 optional string strFactoryRspId;
     };
 };
